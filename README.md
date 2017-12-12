@@ -14,7 +14,7 @@ mostly become absolete once the Daedalus wallet for Linux is released.
 Please check: https://daedaluswallet.io.
 
 ## Using Docker Compose
-*WIP* - I haven't written it yet
+*WIP* - Not comitted just yet
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 - `git clone https://github.com/hcvst/cardano-daedalus-docker.git`  
 - `cd cardano-daedalus-docker` 
