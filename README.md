@@ -2,7 +2,7 @@
 The Dockerfiles for the Daedalus and Cardano SL builds are located
 in the `daedalus` and `cardano-sl` directories.
 
-They are build automatically by Docker hub. Please see:
+They are built automatically by Docker hub. Please see:
 - https://hub.docker.com/r/hcvst/cardano-daedalus/
 - https://hub.docker.com/r/hcvst/cardano-sl/
 
