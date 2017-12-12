@@ -11,7 +11,7 @@ The easiest way to start a node and a wallet is to use Docker Compose.
 Please note that these Docker images are quite big and will
 mostly become absolete once the Daedalus wallet for Linux is released.
 
-Please check: [https://daedaluswallet.io]().
+Please check: https://daedaluswallet.io.
 
 ## Using Docker Compose
 *WIP* - I haven't written it yet
