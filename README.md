@@ -1,10 +1,10 @@
 # cardano-daedalus-docker
 
-## How to run Cardano ($ADA) Daedalus wallet on Linux
 Note this is all work in progress. Ideally just have a look at the Dockerfiles to see
 how I setup Cardano and Deadalus on my Ubuntu machine. 
 
-They are built automatically by Docker hub. Please see:
+## How to run Cardano ($ADA) Daedalus wallet on Linux
+### Docker images
 - https://hub.docker.com/r/hcvst/cardano-sl-with-daedalus-wallet/ - all in one Ubuntu build
 - https://hub.docker.com/r/hcvst/cardano-daedalus/ - Ubuntu based image of wallet
 - https://hub.docker.com/r/hcvst/cardano-sl/ - Ubuntu based image of cardano-sl
@@ -15,12 +15,12 @@ mostly become absolete once the Daedalus wallet for Linux is released.
 
 Please check: https://daedaluswallet.io.
 
-## Manual start
+### Manual start
 - Initial start: `docker run -d --name=cardano  -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY hcvst/cardano-sl-with-daedalus-wallet`
 - Stop: `docker stop cardano`
 - Start: `docker start cardano`(This does not work so once you stop this image you loose the synced blockchain!)
 
-## Using Docker Compose
+### Using Docker Compose
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 - `git clone https://github.com/hcvst/cardano-daedalus-docker.git`  
 - `cd cardano-daedalus-docker` 
