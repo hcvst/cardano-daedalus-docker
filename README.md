@@ -3,8 +3,9 @@ The Dockerfiles for the Daedalus and Cardano SL builds are located
 in the `daedalus` and `cardano-sl` directories.
 
 They are built automatically by Docker hub. Please see:
-- https://hub.docker.com/r/hcvst/cardano-daedalus/
-- https://hub.docker.com/r/hcvst/cardano-sl/
+- https://hub.docker.com/r/hcvst/cardano-daedalus/ - Ubuntu based image
+- https://hub.docker.com/r/hcvst/cardano-sl/ - Ubuntu based image
+- https://hub.docker.com/r/hcvst/cardano-sl-nix/ - nixos/nix based image
 
 The easiest way to start a node and a wallet is to use Docker Compose.
 
