@@ -14,7 +14,7 @@ mostly become absolete once the Daedalus wallet for Linux is released.
 Please check: https://daedaluswallet.io.
 
 ## Manual start
-- Initial start: `docker run -d --name=cardano  -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY hcvst/cardano-sl-with-wallet`
+- Initial start: `docker run -d --name=cardano  -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY hcvst/cardano-sl-with-daedalus-wallet`
 - Stop: `docker stop cardano`
 - Start: `docker start cardano`(This does not work so once you stop this image you loose the synced blockchain!)
 
