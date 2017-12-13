@@ -28,3 +28,4 @@ If you would like to help ...:
 - The images are big. I initially tried alpine but got stuck (perhaps one can use nixOS directly?) Update: I have added `cardano-sl-nix`
 - Are for the `daedalus-ds` build both `nix-builds` in the `Dockerfile` required or would the second suffice? Update: It seems to be enough to build the release only as per the nix image.
 - The blockchain should probably be stored in a docker volume
+- I am not happy yet with `docker-compose.yml` and its `network_mode` in particular nor the `X` volume, which oddly I didn't need to add for it to work. If you know docker compose please take a look.
