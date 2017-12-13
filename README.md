@@ -27,5 +27,5 @@ Please check: https://daedaluswallet.io.
 
 ## Help
 - If have no idea whether this is safe. If not please log a ticket.
-- The images are big. I initially tried alpine but got stuck (perhaps one can use nixOS directly?)
-- Are for the `daedalus-ds` build both `nix-builds` in the `Dockerfile` required or would the second suffice? 
+- The images are big. I initially tried alpine but got stuck (perhaps one can use nixOS directly?) Update: I have added `cardano-sl-nix`
+- Are for the `daedalus-ds` build both `nix-builds` in the `Dockerfile` required or would the second suffice? Update: It seems to be enough to build the release only as per the nix image.
