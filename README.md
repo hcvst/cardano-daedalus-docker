@@ -3,7 +3,7 @@ Note this is all work in progress. Ideally just have a look at the Dockerfiles t
 how I setup Cardano and Deadalus on my Ubuntu machine. 
 
 They are built automatically by Docker hub. Please see:
-- https://hub.docker.com/r/hcvst/cardano-sl-with-wallet/ - all in one Ubuntu build
+- https://hub.docker.com/r/hcvst/cardano-sl-with-daedalus-wallet/ - all in one Ubuntu build
 - https://hub.docker.com/r/hcvst/cardano-daedalus/ - Ubuntu based image of wallet
 - https://hub.docker.com/r/hcvst/cardano-sl/ - Ubuntu based image of cardano-sl
 - https://hub.docker.com/r/hcvst/cardano-sl-nix/ - nixos/nix based image of cardano-sl
