@@ -1,4 +1,6 @@
 # cardano-daedalus-docker
+
+## How to run Cardano ($ADA) Daedalus wallet on Linux
 Note this is all work in progress. Ideally just have a look at the Dockerfiles to see
 how I setup Cardano and Deadalus on my Ubuntu machine. 
 
