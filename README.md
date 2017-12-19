@@ -27,7 +27,7 @@ Please check: https://daedaluswallet.io.
 - `docker-compose up`
 
 ## Help
-If you have a question, please PM me (@hcvst) here https://cardano.rocket.chat. I have only tested this on an Ubuntu 16.04 docker host. 
+If you have a question, please PM me (@hcvst) here https://cardano.rocket.chat or on Telegram (or https://gitter.im/daedalus-wallet-on-docker/Lobby). I have only tested this on an Ubuntu 16.04 docker host. 
 
 If you would like to help ...:
 - If have no idea whether this is safe. If not please log a ticket.
