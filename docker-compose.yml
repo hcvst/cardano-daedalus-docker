@@ -1,16 +1,23 @@
+# vim: ts=2 sw=2 et
 version: '3'
+
 services:
   cardano-sl:
-    image: hcvst/cardano-sl:latest
-    network_mode: "host"
-    ports:
-      - "8090:8090"
+    build: ./cardano-sl
+    volumes:
+      - ~/.cardano:/home/cardano/cardano-sl/state-wallet-mainnet
+      - cardano_tls:/home/cardano/cardano-sl/state-wallet-mainnet/tls
+
   daedalus:
-    depends_on: 
+    depends_on:
       - cardano-sl
-    image: hcvst/cardano-daedalus:latest
-    network_mode: "host"
+    build: ./daedalus
+    network_mode: "service:cardano-sl"
     environment:
       DISPLAY: "$DISPLAY"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - cardano_tls:/home/daedalus/daedalus/tls
+
+volumes:
+  cardano_tls:
