@@ -1,16 +1,22 @@
 FROM ubuntu:16.04
 
-RUN apt-get update &&\
-    apt-get install -y git curl build-essential libgtk2.0.0 libasound2 \
-                       libnotify-bin libgconf-2-4 libnss3 libxss1 &&\
-    curl -sL https://deb.nodesource.com/setup_6.x | bash &&\
-    apt-get install -y nodejs &&\
-    useradd -ms /bin/bash daedalus &&\
-    su - daedalus -c 'git clone https://github.com/input-output-hk/daedalus.git /home/daedalus/daedalus &&\
-                      cd /home/daedalus/daedalus &&\
-                      npm install && npm run-script package'
+RUN apt-get update && apt-get install -y build-essential curl git libasound2 libgconf-2-4 \
+                                         libgtk2.0.0 libnotify-bin libnss3 libxss1
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash
+RUN apt-get install -y nodejs
+RUN apt-get clean && rm -fr /var/lib/apt/lists/*
+RUN useradd -ms /bin/bash daedalus
+
+WORKDIR /home/daedalus
 USER daedalus
+RUN git clone https://github.com/input-output-hk/daedalus.git
 WORKDIR /home/daedalus/daedalus
-USER daedalus
-RUN mkdir tls/ca && cp tls/ca.crt tls/ca
-ENTRYPOINT npm start
+RUN mkdir -p node_modules/daedalus-client-api
+RUN npm install && npm run package
+RUN cp installers/ca.conf installers/client.conf installers/server.conf .
+RUN bash installers/build-certificates-unix.sh
+RUN rm -f tls/server.key && ln -s tls/server/server.key tls/server.key
+RUN rm -f tls/server.cert && ln -s tls/server/server.crt tls/server.cert
+RUN rm ca.conf client.conf server.conf
+
+CMD npm start
