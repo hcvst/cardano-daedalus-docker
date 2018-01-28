@@ -1,0 +1,33 @@
+#!/bin/sh
+# Convenience wrapper script for starting cardano-sl and daedalus containers
+# in a (hopefully) safe manner.
+
+abort() {
+    echo "Aborting: $1."
+    exit
+}
+
+check_program() {
+    command -v $1 >/dev/null || abort "$1 not found in \$PATH"
+}
+
+# Check dependencies
+check_program docker-compose
+check_program pgrep
+check_program xhost
+
+# Abort if cardano-sl is already running
+CARDANO_PID="`pgrep cardano-node`"
+if [ -n "$CARDANO_PID" ]; then
+    abort "cardano-sl seems to be running (PID $CARDANO_PID)"
+fi
+
+# Remove cardano-sl database lock-file if it exists
+rm -f $HOME/.cardano/wallet-db/open.lock
+
+# Allow user 1000 to connect to X server
+xhost +local:
+
+# Start containers
+cd `dirname $0`
+docker-compose up -d
