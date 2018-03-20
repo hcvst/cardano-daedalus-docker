@@ -20,8 +20,6 @@ RUN git clone --branch master https://github.com/input-output-hk/cardano-sl.git
 WORKDIR /home/cardano/cardano-sl
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && \
     nix-build -A cardano-sl-static --cores 0 --max-jobs 2 --out-link master
-COPY connect-to-mainnet.patch .
-RUN git apply connect-to-mainnet.patch
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && \
     nix-build -A connectScripts.mainnetWallet -o connect-to-mainnet
 
