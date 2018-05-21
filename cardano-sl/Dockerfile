@@ -19,7 +19,7 @@ WORKDIR /home/cardano
 RUN git clone --branch master https://github.com/input-output-hk/cardano-sl.git
 WORKDIR /home/cardano/cardano-sl
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && \
-    nix-build -A cardano-sl-static --cores 0 --max-jobs 2 --out-link master
+    nix-build -A cardano-sl-node-static --cores 0 --max-jobs 2 --out-link master
 RUN . /home/cardano/.nix-profile/etc/profile.d/nix.sh && \
     nix-build -A connectScripts.mainnetWallet -o connect-to-mainnet
 
